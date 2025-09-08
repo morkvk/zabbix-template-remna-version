@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>7.0</version>
+    <template_groups>
+        <template_group>
+            <uuid>504dc81cb18841319da1048e8141e6b9</uuid>
+            <name>Templates</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>7ae4a262f40b445d990042b6cf5f53cc</uuid>
+            <template>Template App Remnanode Version</template>
+            <name>Template App Remnanode Version</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>583383f4f5be4757805e4272a0646c91</uuid>
+                    <name>Remnanode Version</name>
+                    <key>remnanode.version</key>
+                    <type>EXTERNAL</type>
+                    <value_type>TEXT</value_type>
+                    <description>Version of remnanode container from docker logs</description>
+                    <history>7d</history>
+                    <trends>0</trends>
+                    <delay>3600</delay>
+                    <timeout>30s</timeout>
+                    <tags>
+                        <tag>
+                            <tag>Application</tag>
+                            <value>Remnanode</value>
+                        </tag>
+                    </tags>
+                    <triggers>
+                        <trigger>
+                            <uuid>7c02fb4e94374f349d6bad3c4e73f8e1</uuid>
+                            <expression>length(last(/Template App Remnanode Version/remnanode.version))=0</expression>
+                            <name>Remnanode version not found</name>
+                            <priority>WARNING</priority>
+                            <description>Version information is missing in remnanode container logs</description>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
