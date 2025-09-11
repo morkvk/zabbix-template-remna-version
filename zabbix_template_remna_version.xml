@@ -22,7 +22,6 @@
                     <uuid>583383f4f5be4757805e4272a0646c91</uuid>
                     <name>Remnanode Version</name>
                     <key>remnanode.version</key>
-                    <type>EXTERNAL</type>
                     <value_type>TEXT</value_type>
                     <description>Version of remnanode container from docker logs</description>
                     <history>7d</history>
